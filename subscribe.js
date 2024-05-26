@@ -14,6 +14,7 @@ exports.handler = async (event, context) => {
           body: '',
         };
       }
+      console.log('Fetching data from serverless function...');
 
   const { email } = JSON.parse(event.body);
 
@@ -23,6 +24,7 @@ exports.handler = async (event, context) => {
   const data = {
     profiles: [{ email: email }]
   };
+  console.log('Fetching data from serverless function...');
 
   try {
     const response = await fetch(`https://a.klaviyo.com/api/v2/list/${LIST_ID}/subscribe`, {
@@ -54,3 +56,4 @@ exports.handler = async (event, context) => {
     };
   }
 };
+console.log('Fetching data from serverless function...');
