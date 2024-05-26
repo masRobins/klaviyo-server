@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
 
   const { email } = JSON.parse(event.body);
 
-  const API_KEY = 'pk_9cb68a0da46aff9a73892b1012cc6e0286';
+  const API_KEY = 'XS7L7P';
   const LIST_ID = 'V89NB9';
 
   const data = {
