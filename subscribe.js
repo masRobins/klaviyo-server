@@ -1,6 +1,20 @@
 const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
+    
+    if (event.httpMethod === 'OPTIONS') {
+        return {
+          statusCode: 200,
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            'Content-Length': '0'
+          },
+          body: '',
+        };
+      }
+
   const { email } = JSON.parse(event.body);
 
   const API_KEY = 'pk_9cb68a0da46aff9a73892b1012cc6e0286';
